@@ -20,9 +20,9 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = "https://github.com/chaitu-ycr/py_uds_lib.git"
-repository = "https://github.com/chaitu-ycr/py_uds_lib.git"
-documentation = "https://chaitu-ycr.github.io/py_uds_lib/"
+homepage = "https://github.com/chaitu-ycr/automotive-test-kit.git"
+repository = "https://github.com/chaitu-ycr/automotive-test-kit.git"
+documentation = "https://chaitu-ycr.github.io/automotive-test-kit/packages/py_uds_lib"
 
 [build-system]
 requires = ["uv_build"]

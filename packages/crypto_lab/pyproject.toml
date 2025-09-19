@@ -18,9 +18,9 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = "https://github.com/chaitu-ycr/crypto_lab"
-repository = "https://github.com/chaitu-ycr/crypto_lab"
-documentation = "https://chaitu-ycr.github.io/crypto_lab/"
+homepage = "https://github.com/chaitu-ycr/automotive-test-kit"
+repository = "https://github.com/chaitu-ycr/automotive-test-kit"
+documentation = "https://chaitu-ycr.github.io/automotive-test-kit/packages/crypto_lab"
 
 [build-system]
 requires = ["uv_build"]

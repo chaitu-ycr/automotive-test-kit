@@ -19,9 +19,9 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = "https://github.com/chaitu-ycr/kmtronic_usb_relay"
-repository = "https://github.com/chaitu-ycr/kmtronic_usb_relay"
-documentation = "https://chaitu-ycr.github.io/kmtronic_usb_relay/"
+homepage = "https://github.com/chaitu-ycr/automotive-test-kit"
+repository = "https://github.com/chaitu-ycr/automotive-test-kit"
+documentation = "https://chaitu-ycr.github.io/automotive-test-kit/packages/kmtronic_usb_relay"
 
 [build-system]
 requires = ["uv_build"]

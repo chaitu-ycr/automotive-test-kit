@@ -1,6 +1,6 @@
 [project]
 name = "py_uds_demo"
-version = "25.0.1"
+version = "25.0.0"
 description = "Learn and Practice UDS Protocol"
 license = { file = "LICENSE" }
 readme = "README.md"
@@ -22,7 +22,7 @@ dependencies = [
 [project.urls]
 homepage = "https://github.com/chaitu-ycr/automotive-test-kit"
 repository = "https://github.com/chaitu-ycr/automotive-test-kit"
-documentation = "https://chaitu-ycr.github.io/automotive-test-kit/"
+documentation = "https://chaitu-ycr.github.io/automotive-test-kit/packages/py_uds_demo"
 
 [build-system]
 requires = ["uv_build"]

@@ -23,7 +23,7 @@ dependencies = [
 [project.urls]
 homepage = "https://github.com/chaitu-ycr/automotive-test-kit"
 repository = "https://github.com/chaitu-ycr/automotive-test-kit"
-documentation = "https://chaitu-ycr.github.io/automotive-test-kit/"
+documentation = "https://chaitu-ycr.github.io/automotive-test-kit/packages/can_log_analyzer"
 
 [build-system]
 requires = ["uv_build"]

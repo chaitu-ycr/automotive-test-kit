@@ -20,7 +20,7 @@ dependencies = [
 [project.urls]
 homepage = "https://github.com/chaitu-ycr/automotive-test-kit"
 repository = "https://github.com/chaitu-ycr/automotive-test-kit"
-documentation = "https://chaitu-ycr.github.io/automotive-test-kit/"
+documentation = "https://chaitu-ycr.github.io/automotive-test-kit/packages/canmatrix_webapp"
 
 [build-system]
 requires = ["uv_build"]
