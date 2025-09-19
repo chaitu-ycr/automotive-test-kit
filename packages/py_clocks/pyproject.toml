@@ -1,6 +1,6 @@
 [project]
 name = "py_clocks"
-version = "25.0.1"
+version = "25.0.2"
 description = "The py_clocks package is a Python-based project designed for displaying multiple timezone clocks in windows desktop."
 license = { file = "LICENSE" }
 readme = "README.md"
@@ -19,7 +19,7 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = "https://github.com/chaitu-ycr/automotive-test-kit"
+homepage = "https://github.com/chaitu-ycr/automotive-test-kit/tree/main/packages/py_clocks"
 repository = "https://github.com/chaitu-ycr/automotive-test-kit"
 documentation = "https://chaitu-ycr.github.io/automotive-test-kit/packages/py_clocks"
 

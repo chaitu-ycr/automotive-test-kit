@@ -1,6 +1,6 @@
 [project]
 name = "tenma_ps"
-version = "25.0.0"
+version = "25.0.1"
 description = "python package for controlling tenma power supply"
 license = { file = "LICENSE" }
 readme = "README.md"
@@ -19,7 +19,7 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = "https://github.com/chaitu-ycr/automotive-test-kit"
+homepage = "https://github.com/chaitu-ycr/automotive-test-kit/tree/main/packages/tenma_ps"
 repository = "https://github.com/chaitu-ycr/automotive-test-kit"
 documentation = "https://chaitu-ycr.github.io/automotive-test-kit/packages/tenma_ps"
 

@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = "https://github.com/chaitu-ycr/automotive-test-kit"
+homepage = "https://github.com/chaitu-ycr/automotive-test-kit/tree/main/packages/canmatrix_webapp"
 repository = "https://github.com/chaitu-ycr/automotive-test-kit"
 documentation = "https://chaitu-ycr.github.io/automotive-test-kit/packages/canmatrix_webapp"
 

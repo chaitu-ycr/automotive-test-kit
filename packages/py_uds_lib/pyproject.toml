@@ -1,6 +1,6 @@
 [project]
 name = "py_uds_lib"
-version = "25.0.0"
+version = "25.0.1"
 description = "Python package for creating UDS requests"
 license = { file = "LICENSE" }
 readme = "README.md"
@@ -20,8 +20,8 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = "https://github.com/chaitu-ycr/automotive-test-kit.git"
-repository = "https://github.com/chaitu-ycr/automotive-test-kit.git"
+homepage = "https://github.com/chaitu-ycr/automotive-test-kit/tree/main/packages/py_uds_lib"
+repository = "https://github.com/chaitu-ycr/automotive-test-kit"
 documentation = "https://chaitu-ycr.github.io/automotive-test-kit/packages/py_uds_lib"
 
 [build-system]
