@@ -1,6 +1,6 @@
 
 ---
 
-::: src.ollama_apps.app
+::: ollama_apps.app
 
 ---

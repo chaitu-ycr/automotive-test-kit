@@ -37,6 +37,7 @@ plugins:
             - packages/crypto_lab/src
             - packages/hid_usb_relay/src
             - packages/kmtronic_usb_relay/src
+            - packages/ollama_apps/src
             - packages/py_clocks/src
             - packages/py_uds_demo/src
             - packages/py_uds_lib/src
