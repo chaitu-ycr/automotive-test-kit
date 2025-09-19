@@ -474,6 +474,75 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#source-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      source manual
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#py_clocks.py_clocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      py_clocks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#py_clocks.py_clocks.PyClocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      PyClocks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PyClocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#py_clocks.py_clocks.PyClocks.add_clock_widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_clock_widget
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#py_clocks.py_clocks.PyClocks.configure_window" class="md-nav__link">
+    <span class="md-ellipsis">
+      configure_window
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#py_clocks.py_clocks.PyClocks.run" class="md-nav__link">
+    <span class="md-ellipsis">
+      run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#py_clocks.py_clocks.PyClocks.start_clock_update" class="md-nav__link">
+    <span class="md-ellipsis">
+      start_clock_update
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -592,6 +661,320 @@
 <p>To create a standalone executable for the <code>py_clocks</code> package using PyInstaller, use the provided script:</p>
 <p><code>pyinstaller --onefile packages/py_clocks/src/py_clocks/py_clocks.py</code></p>
 <p><strong>Locate the executable</strong>: The generated executable will be located in the <code>dist</code> directory as <code>py_clocks.exe</code>.</p>
+<h2 id="source-manual"><a href="https://chaitu-ycr.github.io/automotive-test-kit/packages/py_clocks/#source-manual">source manual</a></h2>
+<hr />
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="py_clocks.py_clocks"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="py_clocks.py_clocks.PyClocks" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">PyClocks</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>A class that encapsulates the clock application logic and individual clock widgets.</p>
+
+        <p>Initializes the PyClocks application.</p>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="py_clocks.py_clocks.PyClocks.add_clock_widget" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_clock_widget</span><span class="p">(</span><span class="n">timezone</span><span class="p">,</span> <span class="n">label_text</span><span class="p">,</span> <span class="n">bg_color</span><span class="p">,</span> <span class="n">text_color</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Adds a clock widget to the application window.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>timezone</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The timezone for the clock.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>label_text</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The label text displayed above the clock.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>bg_color</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The background color of the widget.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>text_color</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The text color for the labels.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="py_clocks.py_clocks.PyClocks.configure_window" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">configure_window</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Configures the main application window and positions it at the bottom-right corner of the screen.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="py_clocks.py_clocks.PyClocks.run" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">run</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Runs the PyClocks application by creating the main window and adding clock widgets for specified timezones.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="py_clocks.py_clocks.PyClocks.start_clock_update" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">start_clock_update</span><span class="p">(</span><span class="n">time_label</span><span class="p">,</span> <span class="n">date_label</span><span class="p">,</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">label_text</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Starts the periodic update of the clock display.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>time_label</code>
+            </td>
+            <td>
+                  <code><span title="CTkLabel">CTkLabel</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The label to update with the current time.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>date_label</code>
+            </td>
+            <td>
+                  <code><span title="CTkLabel">CTkLabel</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The label to update with the current date.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>timezone</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The timezone for the clock.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>label_text</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The label text for logging purposes.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><hr />
 
 
 
