@@ -1,12 +1,5 @@
 # automotive-test-kit
 
-**Version:** 25.0.0  
-**Author:** chaitu-ycr  
-**License:** MIT  
-**Python Compatibility:** 3.10 – 3.13
-
-## Description
-
 `automotive-test-kit` is a monorepo that includes various automotive test automation packages and a knowledge base. It is designed to streamline and centralize automotive testing, automation, and documentation.
 
 ## Features

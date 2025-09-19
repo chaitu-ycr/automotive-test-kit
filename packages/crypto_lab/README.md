@@ -26,11 +26,4 @@ A Python Streamlit-based web application for experimenting with cryptographic al
   - `--server-address`: Address to bind the Streamlit server (default: system FQDN)
   - `--server-port`: Port to run the Streamlit server on (default: 8503)
 
----
-
-## source manual
-
-::: crypto_lab.web_app
-::: crypto_lab.run_web_app
-
----
+## [source manual](https://chaitu-ycr.github.io/automotive-test-kit/packages/crypto_lab/#source-manual)

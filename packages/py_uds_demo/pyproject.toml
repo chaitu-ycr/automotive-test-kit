@@ -1,6 +1,6 @@
 [project]
 name = "py_uds_demo"
-version = "25.0.0"
+version = "25.0.1"
 description = "Learn and Practice UDS Protocol"
 license = { file = "LICENSE" }
 readme = "README.md"

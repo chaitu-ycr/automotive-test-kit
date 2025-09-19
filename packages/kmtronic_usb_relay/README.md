@@ -22,13 +22,4 @@ python -m src.kmtronic_usb_relay.four_channel_relay_api
 
 ![kmtronic_usb_relay_api](./images/four_channel_relay_api.png)
 
----
-
-## source manual
-
-::: kmtronic_usb_relay.four_channel_relay
-::: kmtronic_usb_relay.four_channel_relay_api
-::: kmtronic_usb_relay.four_channel_relay_gui
-::: kmtronic_usb_relay.com_utils
-
----
+## [source manual](https://chaitu-ycr.github.io/automotive-test-kit/packages/kmtronic_usb_relay/#source-manual)

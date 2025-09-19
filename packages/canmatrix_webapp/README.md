@@ -31,10 +31,4 @@ Example:
 python -m canmatrix_webapp.run_web_app --server-address 127.0.0.1 --server-port 8502
 ```
 
----
-
-## source manual
-
-::: canmatrix_webapp.web_app
-
----
+## [source manual](https://chaitu-ycr.github.io/automotive-test-kit/packages/canmatrix_webapp/#source-manual)

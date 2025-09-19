@@ -22,3 +22,5 @@ To create a standalone executable for the `py_clocks` package using PyInstaller,
 ```pyinstaller --onefile packages/py_clocks/src/py_clocks/py_clocks.py```
 
 **Locate the executable**: The generated executable will be located in the `dist` directory as `py_clocks.exe`.
+
+## [source manual](https://chaitu-ycr.github.io/automotive-test-kit/packages/py_clocks/#source-manual)

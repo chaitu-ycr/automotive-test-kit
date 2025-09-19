@@ -2,11 +2,4 @@
 
 hid based usb relay package
 
----
-
-## source manual
-
-::: hid_usb_relay.usb_relay
-::: hid_usb_relay.rest_api
-
----
+## [source manual](https://chaitu-ycr.github.io/automotive-test-kit/packages/hid_usb_relay/#source-manual)

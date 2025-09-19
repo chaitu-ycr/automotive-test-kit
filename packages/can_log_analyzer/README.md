@@ -30,10 +30,4 @@ python -m can_log_analyzer.run_web_app
 - Choose plot type and customize grid/axis options as needed.
 - Interactive plots and analysis will be available after loading your files.
 
----
-
-## source manual
-
-::: can_log_analyzer.web_app
-
----
+## [source manual](https://chaitu-ycr.github.io/automotive-test-kit/packages/can_log_analyzer/#source-manual)
