@@ -7,7 +7,7 @@ By default, the app shows the time in the following timezones:
   - **Asia/Kolkata**
   - **Europe/Berlin**
 
-![py_clocks_app](./images/py_clocks_app.png)
+![py_clocks_app](https://chaitu-ycr.github.io/automotive-test-kit/packages/images/py_clocks_app.png)
 
 *Screenshot of the `py_clocks` application showing multiple timezone clocks.*
 
