@@ -1,0 +1,75 @@
+[project]
+name = "ollama_apps"
+version = "25.0.0"
+description = "ollama apps. python based apps."
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.10, <=3.14"
+authors = [{ name = "chaitu-ycr", email = "chaitu.ycr@gmail.com" }]
+keywords = ["python", "ollama", "experiments"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows"
+]
+dependencies = [
+    # Core LangChain packages
+    "langchain",
+    "langchain-community",
+    "langchain-ollama",
+    "langchain-huggingface",
+    "langchain-core",
+    "langchain-unstructured",
+
+    # Vector store
+    "faiss-cpu",
+
+    # Embeddings
+    "sentence-transformers",
+
+    # Document loaders and parsing
+    "unstructured",
+    "pdfminer.six",
+    "PyMuPDF",
+    "python-docx",
+    "python-pptx",
+    "openpyxl",
+    "xlrd",
+    "pandas",
+    "beautifulsoup4",
+    "html5lib",
+
+    # UI
+    "gradio",
+
+    # Utilities
+    "tqdm",
+    "pydantic",
+
+    # other
+    "certifi",
+    "huggingface_hub[hf_xet]",
+    "python-magic",
+    "python-magic-bin",
+]
+
+[project.optional-dependencies]
+dev = [
+    # formatter
+    "ruff",
+
+    # documentation
+    "mkdocs-material",
+    "mkdocstrings-python",
+    "mkdocs-macros-plugin",
+    "mkdocs-include-markdown-plugin",
+]
+
+[project.urls]
+homepage = "https://github.com/chaitu-ycr/automotive-test-kit"
+repository = "https://github.com/chaitu-ycr/automotive-test-kit"
+documentation = "https://chaitu-ycr.github.io/automotive-test-kit/packages/ollama_apps"
+
+[build-system]
+requires = ["uv_build"]
+build-backend = "uv_build"
