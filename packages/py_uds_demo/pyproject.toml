@@ -1,0 +1,29 @@
+[project]
+name = "py_uds_demo"
+version = "25.0.1"
+description = "Learn and Practice UDS Protocol"
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.10, <=3.14"
+authors = [{ name = "chaitu-ycr", email = "chaitu.ycr@gmail.com" }]
+keywords = ["python", "template"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows"
+]
+dependencies = [
+    "dearpygui",
+    "gradio",
+    "fastapi",
+    "uvicorn",
+]
+
+[project.urls]
+homepage = "https://github.com/chaitu-ycr/automotive-test-kit"
+repository = "https://github.com/chaitu-ycr/automotive-test-kit"
+documentation = "https://chaitu-ycr.github.io/automotive-test-kit/"
+
+[build-system]
+requires = ["uv_build"]
+build-backend = "uv_build"

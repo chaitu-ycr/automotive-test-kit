@@ -1,0 +1,64 @@
+site_name: automotive-test-kit
+site_url: https://chaitu-ycr.github.io/automotive-test-kit/
+site_description: "Mono repo of @automotive-test-kit. Includes various packages and knowledge base."
+site_author:  chaitu-ycr
+repo_name: "chaitu-ycr/automotive-test-kit"
+repo_url: https://github.com/chaitu-ycr/automotive-test-kit
+edit_uri: blob/main/
+
+nav:
+  - Home: index.md
+  - packages:
+      - can_log_analyzer: packages/can_log_analyzer.md
+      - canmatrix_webapp: packages/canmatrix_webapp.md
+      - crypto_lab: packages/crypto_lab.md
+      - hid_usb_relay: packages/hid_usb_relay.md
+      - kmtronic_usb_relay: packages/kmtronic_usb_relay.md
+      - py_clocks: packages/py_clocks.md
+      - py_uds_demo: packages/py_uds_demo.md
+      - py_uds_lib: packages/py_uds_lib.md
+      - tenma_ps: packages/tenma_ps.md
+  # - knowledge_base:
+  #     - ai:
+  #         - chat_templates:
+  #             - automotive_kb_template: knowledge_base/ai/chat_templates/automotive_kb_template.md
+
+exclude_docs: |
+  knowledge_base/*
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          paths:
+            - packages/can_log_analyzer/src
+            - packages/canmatrix_webapp/src
+            - packages/crypto_lab/src
+            - packages/hid_usb_relay/src
+            - packages/kmtronic_usb_relay/src
+            - packages/py_clocks/src
+            - packages/py_uds_demo/src
+            - packages/py_uds_lib/src
+            - packages/tenma_ps/src
+            - src  # Root level src if any
+          options:
+            docstring_style: google
+            show_source: false
+            merge_init_into_class: true
+            show_docstring_modules: false
+  - include-markdown:
+      recursive: true
+  - macros
+  - search
+
+theme:
+  name: material
+  features:
+    - toc.integrate
+    - search
+
+extra_css:
+  - _assets/extra.css
+
+extra_javascript:
+  - https://unpkg.com/mermaid@11.11.0/dist/mermaid.core.mjs

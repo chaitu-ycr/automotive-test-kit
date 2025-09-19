@@ -1,0 +1,29 @@
+[project]
+name = "py_uds_lib"
+version = "25.0.0"
+description = "Python package for creating UDS requests"
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.10, <=3.14"
+authors = [{ name = "chaitu-ycr", email = "chaitu.ycr@gmail.com" }]
+keywords = ["python", "UDS", "diagnostics"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Software Development :: Embedded Systems"
+]
+dependencies = [
+    "cantools",
+    "odxtools",
+    "python-can"
+]
+
+[project.urls]
+homepage = "https://github.com/chaitu-ycr/py_uds_lib.git"
+repository = "https://github.com/chaitu-ycr/py_uds_lib.git"
+documentation = "https://chaitu-ycr.github.io/py_uds_lib/"
+
+[build-system]
+requires = ["uv_build"]
+build-backend = "uv_build"

@@ -1,0 +1,32 @@
+[project]
+name = "hid_usb_relay"
+version = "25.0.0"
+description = "hid based usb relay package"
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.10, <=3.14"
+authors = [{ name = "chaitu-ycr", email = "chaitu.ycr@gmail.com" }]
+keywords = ["Python", "HID", "USB", "RELAY"]
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows"
+]
+
+dependencies = [
+    "gradio",
+    "fastapi[standard]",
+]
+
+[project.urls]
+homepage = "https://github.com/chaitu-ycr/automotive-test-kit"
+repository = "https://github.com/chaitu-ycr/automotive-test-kit"
+documentation = "https://chaitu-ycr.github.io/automotive-test-kit/"
+
+[build-system]
+requires = ["uv_build"]
+build-backend = "uv_build"

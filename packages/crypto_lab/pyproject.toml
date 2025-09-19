@@ -1,0 +1,27 @@
+[project]
+name = "crypto_lab"
+version = "25.0.0"
+description = "python streamlit based webapp for experimenting pycryptodome"
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.10, <=3.14"
+authors = [{ name = "chaitu-ycr", email = "chaitu.ycr@gmail.com" }]
+keywords = ["experiment", "pycryptodome"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows"
+]
+dependencies = [
+    "pycryptodome",
+    "streamlit",
+]
+
+[project.urls]
+homepage = "https://github.com/chaitu-ycr/crypto_lab"
+repository = "https://github.com/chaitu-ycr/crypto_lab"
+documentation = "https://chaitu-ycr.github.io/crypto_lab/"
+
+[build-system]
+requires = ["uv_build"]
+build-backend = "uv_build"

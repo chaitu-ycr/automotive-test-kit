@@ -1,0 +1,28 @@
+[project]
+name = "tenma_ps"
+version = "25.0.0"
+description = "python package for controlling tenma power supply"
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.10, <=3.14"
+authors = [{ name = "chaitu-ycr", email = "chaitu.ycr@gmail.com" }]
+keywords = ["python", "tenma", "power", "supply", "application"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows"
+]
+dependencies = [
+    "tenma-serial",
+    "customtkinter",
+    "fastapi[all]",
+]
+
+[project.urls]
+homepage = "https://github.com/chaitu-ycr/tenma_ps"
+repository = "https://github.com/chaitu-ycr/tenma_ps"
+documentation = "https://chaitu-ycr.github.io/tenma_ps/"
+
+[build-system]
+requires = ["uv_build"]
+build-backend = "uv_build"

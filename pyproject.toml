@@ -1,0 +1,61 @@
+[project]
+name = "automotive_test_kit"
+version = "25.0.0"
+description = "Mono repo of @chaitu-ycr Includes various automotive test automation packages and knowledge base."
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.10, <=3.13"
+authors = [{ name = "chaitu-ycr", email = "chaitu.ycr@gmail.com" }]
+keywords = ["automotive-test-kit", "automotive", "test", "automation", "packages", "documentation"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows"
+]
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pyinstaller",
+    "ruff",
+    "pytest",
+    "pytest-html",
+    "pytest-sugar",
+    "pytest-clarity",
+    "pytest-cov",
+    "pytest-xdist",
+    "pytest-watch",
+    "mkdocs",
+    "mkdocs-puml",
+    "mkdocs-material",
+    "mkdocstrings[python]",
+    "mkdocs-macros-plugin",
+    "mkdocs-include-markdown-plugin",
+    "pymdown-extensions",
+]
+
+[project.urls]
+homepage = "https://github.com/chaitu-ycr/automotive-test-kit"
+repository = "https://github.com/chaitu-ycr/automotive-test-kit"
+documentation = "https://chaitu-ycr.github.io/automotive-test-kit/"
+
+[tool.uv.workspace]
+members = ["packages/*"]
+
+[tool.uv.sources]
+can_log_analyzer = { workspace = true }
+canmatrix_webapp = { workspace = true }
+crypto_lab = { workspace = true }
+hid_usb_relay = { workspace = true }
+kmtronic_usb_relay = { workspace = true }
+py_clocks = { workspace = true }
+py_uds_demo = { workspace = true }
+py_uds_lib = { workspace = true }
+
+[build-system]
+requires = ["uv_build"]
+build-backend = "uv_build"
