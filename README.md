@@ -17,7 +17,6 @@
 - `kmtronic_usb_relay`
 - `py_clocks`
 - `py_uds_demo`
-- `py_uds_lib`
 - `tenma_ps`
 
 ## Usage

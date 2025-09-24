@@ -54,7 +54,6 @@ hid_usb_relay = { workspace = true }
 kmtronic_usb_relay = { workspace = true }
 py_clocks = { workspace = true }
 py_uds_demo = { workspace = true }
-py_uds_lib = { workspace = true }
 
 [build-system]
 requires = ["uv_build"]
