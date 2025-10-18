@@ -135,7 +135,7 @@ Go to your repo's **Actions** tab to view the workflow run and output.
 
 ### Parallel and Matrix Execution Examples
 
-**1. Basic Parallel Jobs (Default Behavior)**
+**1. Basic Parallel Jobs**
 Jobs in a workflow run in parallel by default:
 ```yaml
 name: Parallel Jobs Example
@@ -144,22 +144,26 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - run: echo "Building..."
+      - run: echo "Building on Windows..."
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Building on Linux..."
   test:
     runs-on: windows-latest
     steps:
-      - run: echo "Testing..."
-  lint:
-    runs-on: windows-latest
+      - run: echo "Testing on Windows..."
+  test-linux:
+    runs-on: ubuntu-latest
     steps:
-      - run: echo "Linting..."
+      - run: echo "Testing on Linux..."
 ```
 
 ### Build and Compilation Automation
 
 #### C++ and CMake Projects
 
-**Cross-platform builds with matrix strategy (Windows, Linux, macOS):**
+**Cross-platform builds with matrix strategy:**
 ```yaml
 name: C++ Cross-Platform Build
 on: [push, pull_request]
@@ -167,7 +171,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
+        os: [windows-latest, ubuntu-latest]
         compiler: [gcc, clang, msvc]
     runs-on: ${{ matrix.os }}
     steps:
@@ -180,45 +184,28 @@ jobs:
         run: cmake --build --preset=default
 ```
 
-**Dependency management with vcpkg and binary caching:**
+**C++ build using Docker in GitHub Actions:**
 ```yaml
-name: C++ vcpkg & Caching
+name: C++ Docker Build
 on: [push]
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Setup vcpkg
+      - name: Build in Docker
         run: |
-          git clone https://github.com/microsoft/vcpkg.git
-          .\vcpkg\bootstrap-vcpkg.bat
-      - name: Install dependencies
-        run: .\vcpkg\vcpkg.exe install gtest
-      - name: Cache vcpkg binaries
-        uses: actions/cache@v3
-        with:
-          path: vcpkg/installed
-          key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/vcpkg.json') }}
-      - name: Build
-        run: cmake -S . -B build && cmake --build build --config Release
+          docker build -t cpp-build-env -f Dockerfile .
+          docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace cpp-build-env bash -c "cmake -S . -B build && cmake --build build --config Release"
 ```
 
-**Ninja build system integration:**
-```yaml
-name: C++ Ninja Build
-on: [push]
-jobs:
-  build:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install Ninja
-        run: choco install ninja
-      - name: Configure
-        run: cmake -S . -B build -G Ninja
-      - name: Build
-        run: ninja -C build
+Example `Dockerfile` for a C++ build environment:
+```Dockerfile
+FROM ubuntu:22.04
+RUN apt-get update && \
+    apt-get install -y build-essential cmake git && \
+    rm -rf /var/lib/apt/lists/*
+WORKDIR /workspace
 ```
 
 #### Python Projects
@@ -228,8 +215,20 @@ jobs:
 name: Python Multi-Version CI
 on: [push, pull_request]
 jobs:
-  test:
+  test-windows:
     runs-on: windows-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -r requirements.txt
+      - run: pytest
+  test-linux:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
@@ -250,8 +249,21 @@ on:
     tags:
       - 'v*'
 jobs:
-  build-and-publish:
+  build-and-publish-windows:
     runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.10'
+      - run: pip install build twine
+      - run: python -m build
+      - run: twine upload dist/*
+        env:
+          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+  build-and-publish-linux:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
@@ -270,8 +282,18 @@ jobs:
 name: Python Poetry CI
 on: [push]
 jobs:
-  test:
+  test-windows:
     runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.10'
+      - run: pip install poetry
+      - run: poetry install
+      - run: poetry run pytest
+  test-linux:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
@@ -287,8 +309,22 @@ jobs:
 name: Python Build Wheels
 on: [push]
 jobs:
-  build:
+  build-windows:
     runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.10'
+      - run: pip install build
+      - run: python -m build
+      - name: Upload wheels
+        uses: actions/upload-artifact@v3
+        with:
+          name: wheels
+          path: dist/
+  build-linux:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
@@ -310,8 +346,26 @@ jobs:
 name: Python Integration Test with PostgreSQL
 on: [push]
 jobs:
-  test:
+  test-windows:
     runs-on: windows-latest
+    services:
+      postgres:
+        image: postgres:13
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: test
+          POSTGRES_PASSWORD: test
+          POSTGRES_DB: testdb
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.10'
+      - run: pip install -r requirements.txt
+      - run: pytest
+  test-linux:
+    runs-on: ubuntu-latest
     services:
       postgres:
         image: postgres:13
@@ -335,8 +389,18 @@ jobs:
 name: Python Coverage Enforcement
 on: [push]
 jobs:
-  coverage:
+  coverage-windows:
     runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.10'
+      - run: pip install coverage
+      - run: coverage run -m pytest
+      - run: coverage report --fail-under=80
+  coverage-linux:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
@@ -352,7 +416,7 @@ jobs:
 name: C++ Coverage Gate
 on: [push]
 jobs:
-  coverage:
+  coverage-windows:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
@@ -361,6 +425,17 @@ jobs:
           cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DENABLE_COVERAGE=ON
           cmake --build build --config Release
           .\build\Release\your_gtest_executable.exe --gtest_output=xml:test_results.xml
+      - name: Enforce coverage threshold
+        run: echo "Implement coverage threshold enforcement with your tool"
+  coverage-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and run tests with coverage
+        run: |
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DENABLE_COVERAGE=ON
+          cmake --build build --config Release
+          ./build/your_gtest_executable --gtest_output=xml:test_results.xml
       - name: Enforce coverage threshold
         run: echo "Implement coverage threshold enforcement with your tool"
 ```
@@ -372,8 +447,17 @@ jobs:
 name: Python Static Analysis
 on: [push]
 jobs:
-  analyze:
+  analyze-windows:
     runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.10'
+      - run: pip install pylint
+      - run: pylint your_module/
+  analyze-linux:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
@@ -388,8 +472,17 @@ jobs:
 name: Python Dependency Security
 on: [push]
 jobs:
-  security:
+  security-windows:
     runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.10'
+      - run: pip install safety
+      - run: safety check
+  security-linux:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
@@ -407,7 +500,7 @@ jobs:
   test:
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
+        os: [windows-latest, ubuntu-latest]
         python-version: ["3.8", "3.9", "3.10"]
     runs-on: ${{ matrix.os }}
     steps:
@@ -428,8 +521,19 @@ on:
   push:
     branches: [main]
 jobs:
-  deploy:
+  deploy-windows:
     runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build docs
+        run: python -m mkdocs build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: site
+  deploy-linux:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Build docs
@@ -449,8 +553,18 @@ on:
     tags:
       - 'v*'
 jobs:
-  release:
+  release-windows:
     runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate changelog
+        uses: mikepenz/release-changelog-builder-action@v3
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+  release-linux:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Generate changelog
@@ -467,8 +581,19 @@ name: Manual Approval for Production
 on:
   workflow_dispatch:
 jobs:
-  deploy:
+  deploy-windows:
     runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and deploy
+        run: echo "Deploying to production..."
+    environment:
+      name: production
+      url: https://your-production-url.com
+      reviewers:
+        - your-github-username
+  deploy-linux:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Build and deploy
