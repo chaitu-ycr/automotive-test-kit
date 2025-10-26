@@ -1,6 +1,6 @@
 site_name: automotive-test-kit
 site_url: https://chaitu-ycr.github.io/automotive-test-kit/
-site_description: "Mono repo of @automotive-test-kit. Includes various packages and knowledge base."
+site_description: "Mono repo of @automotive-test-kit. Includes various packages."
 site_author:  chaitu-ycr
 repo_name: "chaitu-ycr/automotive-test-kit"
 repo_url: https://github.com/chaitu-ycr/automotive-test-kit
@@ -10,21 +10,11 @@ nav:
   - Home: index.md
   - packages:
       - can_log_analyzer: packages/can_log_analyzer.md
-      - canmatrix_webapp: packages/canmatrix_webapp.md
-      - crypto_lab: packages/crypto_lab.md
       - hid_usb_relay: packages/hid_usb_relay.md
       - kmtronic_usb_relay: packages/kmtronic_usb_relay.md
-      - ollama_apps: packages/ollama_apps.md
       - py_clocks: packages/py_clocks.md
       - py_uds_demo: packages/py_uds_demo.md
       - tenma_ps: packages/tenma_ps.md
-  - knowledge_base:
-      - programming:
-          - python: https://github.com/chaitu-ycr/automotive-test-kit/tree/main/docs/knowledge_base/programming/python
-          - capl: https://github.com/chaitu-ycr/automotive-test-kit/blob/main/docs/knowledge_base/programming/capl
-
-exclude_docs: |
-  knowledge_base/*
 
 plugins:
   - mkdocstrings:
