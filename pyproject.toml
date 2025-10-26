@@ -1,14 +1,13 @@
 [project]
 name = "automotive_test_kit"
-version = "25.0.0"
-description = "Mono repo of @chaitu-ycr Includes various automotive test automation packages and knowledge base."
+version = "25.0.1"
+description = "Mono repo of @chaitu-ycr Includes various automotive test automation packages."
 license = { file = "LICENSE" }
 readme = "README.md"
 requires-python = ">=3.10, <=3.14"
 authors = [{ name = "chaitu-ycr", email = "chaitu.ycr@gmail.com" }]
-keywords = ["automotive-test-kit", "automotive", "test", "automation", "packages", "documentation"]
+keywords = ["automotive-test-kit", "automotive", "test", "automation", "packages"]
 classifiers = [
-    "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -48,12 +47,11 @@ members = ["packages/*"]
 
 [tool.uv.sources]
 can_log_analyzer = { workspace = true }
-canmatrix_webapp = { workspace = true }
-crypto_lab = { workspace = true }
 hid_usb_relay = { workspace = true }
 kmtronic_usb_relay = { workspace = true }
 py_clocks = { workspace = true }
 py_uds_demo = { workspace = true }
+tenma_ps = { workspace = true }
 
 [build-system]
 requires = ["uv_build"]

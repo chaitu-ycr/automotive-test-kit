@@ -2,7 +2,7 @@
 setlocal
 
 REM ============================
-REM Build canmatrix_webapp Package
+REM Build tenma_ps Package
 REM ============================
 
 REM Move to script directory and then project root
@@ -28,7 +28,7 @@ if %ERRORLEVEL% NEQ 0 (
 )
 
 REM Build the Package
-uv build --package canmatrix_webapp
+uv build --package tenma_ps
 if %ERRORLEVEL% NEQ 0 (
     echo Failed to Build the Package.
     popd
