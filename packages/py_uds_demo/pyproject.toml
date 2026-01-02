@@ -1,6 +1,6 @@
 [project]
 name = "py_uds_demo"
-version = "25.0.2"
+version = "26.0.0"
 description = "Learn and Practice UDS Protocol"
 license = { file = "LICENSE" }
 readme = "README.md"
@@ -14,9 +14,6 @@ classifiers = [
 ]
 dependencies = [
     "dearpygui",
-    "gradio",
-    "fastapi",
-    "uvicorn",
     "nicegui[native]",
 ]
 
