@@ -1,6 +1,6 @@
 
 ---
 
-::: can_log_analyzer.web_app
+::: can_log_analyzer.app
 
 ---

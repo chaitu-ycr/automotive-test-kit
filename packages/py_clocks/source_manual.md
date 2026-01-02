@@ -1,6 +1,6 @@
 
 ---
 
-::: py_clocks.py_clocks
+::: py_clocks.app
 
 ---

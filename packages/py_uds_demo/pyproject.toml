@@ -17,6 +17,7 @@ dependencies = [
     "gradio",
     "fastapi",
     "uvicorn",
+    "nicegui[native]",
 ]
 
 [project.urls]

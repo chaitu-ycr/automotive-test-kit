@@ -1,10 +1,9 @@
 import argparse
 import sys
+import subprocess
+import os
 
 
-from py_uds_demo.interface.cli import Cli
-from py_uds_demo.interface.gui import Gui
-from py_uds_demo.interface.web import Web
 import uvicorn
 
 def main():
@@ -37,16 +36,17 @@ def main():
     match args.mode:
         case "cli":
             print("Starting CLI Mode...")
-            cli = Cli()
-            cli.run()
+            cli_file = os.path.join(os.path.dirname(__file__), 'interface', 'cli.py')
+            subprocess.run([sys.executable, cli_file])
         case "gui":
             print("Starting GUI Mode...")
-            gui = Gui()
-            gui.run()
+            gui_file = os.path.join(os.path.dirname(__file__), 'interface', 'gui.py')
+            subprocess.run([sys.executable, gui_file])
         case "web":
             print("Starting Web Mode...")
-            web = Web()
-            web.run()
+            # Run web interface as a subprocess to allow NiceGUI to initialize properly
+            web_file = os.path.join(os.path.dirname(__file__), 'interface', 'web.py')
+            subprocess.run([sys.executable, web_file])
         case "api":
             print("Starting FastAPI server (API Mode)...")
             uvicorn.run("py_uds_demo.interface.api:app", host="127.0.0.1", port=8000, reload=True)

@@ -1,6 +1,6 @@
 [project]
 name = "can_log_analyzer"
-version = "25.0.0"
+version = "26.0.0"
 description = "CAN log Analyzer"
 license = { file = "LICENSE" }
 readme = "README.md"
@@ -16,8 +16,11 @@ dependencies = [
     "cantools",
     "python-can",
     "pandas",
+    "pyarrow",
     "plotly",
     "streamlit",
+    "nicegui[native]",
+    "matplotlib",
 ]
 
 [project.urls]

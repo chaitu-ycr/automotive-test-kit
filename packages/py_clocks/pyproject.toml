@@ -1,6 +1,6 @@
 [project]
 name = "py_clocks"
-version = "25.0.2"
+version = "26.0.0"
 description = "The py_clocks package is a Python-based project designed for displaying multiple timezone clocks in windows desktop."
 license = { file = "LICENSE" }
 readme = "README.md"
@@ -16,6 +16,7 @@ dependencies = [
     "customtkinter",
     "pyinstaller",
     "pytz",
+    "nicegui[native]"
 ]
 
 [project.urls]

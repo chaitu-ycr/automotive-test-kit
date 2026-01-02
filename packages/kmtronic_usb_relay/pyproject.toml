@@ -1,6 +1,6 @@
 [project]
 name = "kmtronic_usb_relay"
-version = "25.0.2"
+version = "26.0.0"
 description = "Python library for KMTronic USB Relay"
 license = { file = "LICENSE" }
 readme = "README.md"
@@ -16,6 +16,7 @@ dependencies = [
     "pyserial",
     "customtkinter",
     "fastapi[all]",
+    "nicegui[native]",
 ]
 
 [project.urls]

@@ -14,12 +14,10 @@ python -m src.kmtronic_usb_relay.four_channel_relay_gui
 
 ![kmtronic_usb_relay_gui](https://chaitu-ycr.github.io/automotive-test-kit/packages/images/four_channel_relay_gui.png)
 
-### kmtronic_usb_relay_api
+### four_channel_relay_app
 
 ```cmd
-python -m src.kmtronic_usb_relay.four_channel_relay_api
+python -m src.kmtronic_usb_relay.four_channel_relay_app
 ```
-
-![kmtronic_usb_relay_api](https://chaitu-ycr.github.io/automotive-test-kit/packages/images/four_channel_relay_api.png)
 
 ## [source manual](https://chaitu-ycr.github.io/automotive-test-kit/packages/kmtronic_usb_relay/#source-manual)

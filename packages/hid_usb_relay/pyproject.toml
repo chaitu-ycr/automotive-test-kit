@@ -1,6 +1,6 @@
 [project]
 name = "hid_usb_relay"
-version = "25.0.0"
+version = "26.0.0"
 description = "hid based usb relay package"
 license = { file = "LICENSE" }
 readme = "README.md"
@@ -19,7 +19,7 @@ classifiers = [
 
 dependencies = [
     "gradio",
-    "fastapi[standard]",
+    "nicegui[native]",
 ]
 
 [project.urls]

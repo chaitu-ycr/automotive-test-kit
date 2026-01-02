@@ -13,13 +13,13 @@ By default, the app shows the time in the following timezones:
 
 ## Building and Running the Project
 
-```.venv/Scripts/python.exe packages/py_clocks/src/py_clocks/py_clocks.py```
+```.venv/Scripts/python.exe packages/py_clocks/src/py_clocks/app.py```
 
 ## Creating an Executable
 
 To create a standalone executable for the `py_clocks` package using PyInstaller, use the provided script:
 
-```pyinstaller --onefile packages/py_clocks/src/py_clocks/py_clocks.py```
+```pyinstaller --onefile packages/py_clocks/src/py_clocks/app.py```
 
 **Locate the executable**: The generated executable will be located in the `dist` directory as `py_clocks.exe`.
 

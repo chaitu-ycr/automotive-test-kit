@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import MagicMock, patch
 import streamlit as st
-from can_log_analyzer.web_app import WebApp
+from can_log_analyzer.app import WebApp
 from src.can_log_analyzer.run_web_app import WebAppRunner
 
 def test_upload_files_returns_none_when_no_files(monkeypatch):
