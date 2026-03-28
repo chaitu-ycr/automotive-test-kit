@@ -2,30 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://chaitu-ycr.github.io/automotive-test-kit/</loc>
-         <lastmod>2025-10-26</lastmod>
-    </url>
-    <url>
-         <loc>https://chaitu-ycr.github.io/automotive-test-kit/packages/can_log_analyzer/</loc>
-         <lastmod>2025-10-26</lastmod>
-    </url>
-    <url>
-         <loc>https://chaitu-ycr.github.io/automotive-test-kit/packages/hid_usb_relay/</loc>
-         <lastmod>2025-10-26</lastmod>
-    </url>
-    <url>
-         <loc>https://chaitu-ycr.github.io/automotive-test-kit/packages/kmtronic_usb_relay/</loc>
-         <lastmod>2025-10-26</lastmod>
-    </url>
-    <url>
-         <loc>https://chaitu-ycr.github.io/automotive-test-kit/packages/py_clocks/</loc>
-         <lastmod>2025-10-26</lastmod>
-    </url>
-    <url>
-         <loc>https://chaitu-ycr.github.io/automotive-test-kit/packages/py_uds_demo/</loc>
-         <lastmod>2025-10-26</lastmod>
-    </url>
-    <url>
-         <loc>https://chaitu-ycr.github.io/automotive-test-kit/packages/tenma_ps/</loc>
-         <lastmod>2025-10-26</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
 </urlset>
