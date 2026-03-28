@@ -1,10 +1,10 @@
 [project]
 name = "automotive_test_kit"
-version = "25.0.1"
+version = "25.1.0"
 description = "Mono repo of @chaitu-ycr Includes various automotive test automation packages."
 license = { file = "LICENSE" }
 readme = "README.md"
-requires-python = ">=3.10, <=3.14"
+requires-python = ">=3.10"
 authors = [{ name = "chaitu-ycr", email = "chaitu.ycr@gmail.com" }]
 keywords = ["automotive-test-kit", "automotive", "test", "automation", "packages"]
 classifiers = [
@@ -12,10 +12,19 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "License :: OSI Approved :: MIT License",
     "Operating System :: Microsoft :: Windows"
 ]
-dependencies = []
+dependencies = [
+    "can-log-analyzer",
+    "hid-usb-relay",
+    "kmtronic-usb-relay",
+    "py-canoe",
+    "py-clocks",
+    "py-uds-demo",
+    "tenma-ps",
+]
 
 [dependency-groups]
 dev = [
@@ -26,15 +35,14 @@ dev = [
     "pytest-sugar",
     "pytest-clarity",
     "pytest-cov",
-    "pytest-xdist",
     "pytest-watch",
-    "mkdocs",
     "mkdocs-puml",
+    "mkdocs-exclude",
     "mkdocs-material",
-    "mkdocstrings[python]",
+    "mkdocs-jupyter",
+    "mkdocstrings-python",
     "mkdocs-macros-plugin",
     "mkdocs-include-markdown-plugin",
-    "pymdown-extensions",
 ]
 
 [project.urls]
@@ -42,17 +50,6 @@ homepage = "https://github.com/chaitu-ycr/automotive-test-kit"
 repository = "https://github.com/chaitu-ycr/automotive-test-kit"
 documentation = "https://chaitu-ycr.github.io/automotive-test-kit/"
 
-[tool.uv.workspace]
-members = ["packages/*"]
-
-[tool.uv.sources]
-can_log_analyzer = { workspace = true }
-hid_usb_relay = { workspace = true }
-kmtronic_usb_relay = { workspace = true }
-py_clocks = { workspace = true }
-py_uds_demo = { workspace = true }
-tenma_ps = { workspace = true }
-
 [build-system]
-requires = ["uv_build"]
-build-backend = "uv_build"
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -9,12 +9,12 @@
 
 ## Included Packages
 
-- `can_log_analyzer`
-- `hid_usb_relay`
-- `kmtronic_usb_relay`
-- `py_clocks`
-- `py_uds_demo`
-- `tenma_ps`
+- `can-log-analyzer`
+- `hid-usb-relay`
+- `kmtronic-usb-relay`
+- `py-clocks`
+- `py-uds-demo`
+- `tenma-ps`
 
 ## Usage
 

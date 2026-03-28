@@ -8,28 +8,12 @@ edit_uri: blob/main/
 
 nav:
   - Home: index.md
-  - packages:
-      - can_log_analyzer: packages/can_log_analyzer.md
-      - hid_usb_relay: packages/hid_usb_relay.md
-      - kmtronic_usb_relay: packages/kmtronic_usb_relay.md
-      - py_clocks: packages/py_clocks.md
-      - py_uds_demo: packages/py_uds_demo.md
-      - tenma_ps: packages/tenma_ps.md
 
 plugins:
   - mkdocstrings:
       handlers:
         python:
           paths:
-            - packages/can_log_analyzer/src
-            - packages/canmatrix_webapp/src
-            - packages/crypto_lab/src
-            - packages/hid_usb_relay/src
-            - packages/kmtronic_usb_relay/src
-            - packages/ollama_apps/src
-            - packages/py_clocks/src
-            - packages/py_uds_demo/src
-            - packages/tenma_ps/src
             - src  # Root level src if any
           options:
             docstring_style: google
@@ -51,4 +35,4 @@ extra_css:
   - _assets/extra.css
 
 extra_javascript:
-  - https://unpkg.com/mermaid@11.11.0/dist/mermaid.core.mjs
+  - https://unpkg.com/mermaid@11.13.0/dist/mermaid.core.mjs
